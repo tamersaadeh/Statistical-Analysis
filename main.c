@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define DEBUG 0
+
 #include "analysislib.h"
 
 int main() {
@@ -35,13 +37,12 @@ int main() {
 	double rmax = max(raw, arrLen);
 	double rstd = std(raw, arrLen, rmean);
 
-	/*
-	 printf("\nRaw data: ");
-	 print_table(raw, arrLen, rmean, rmin, rmax, rstd);
+	if (DEBUG) {
+		printf("\nRaw data: ");
+		table(raw, arrLen, rmean, rmin, rmax, rstd);
 
-	 histogram(raw, arrLen, rmax, rmin);
-
-	 */
+		histogram(raw, arrLen, rmax, rmin);
+	}
 
 	// Copy raw to standard, before editing it
 
@@ -56,7 +57,7 @@ int main() {
 	double sstd = std(standard, arrLen, smean);
 
 	printf("\nStandarized data: ");
-	print_table(standard, arrLen, smean, smin, smax, sstd);
+	table(standard, arrLen, smean, smin, smax, sstd);
 
 	histogram(standard, arrLen, smax, smin);
 

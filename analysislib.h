@@ -1,5 +1,5 @@
 /*
- * statistical_analysis.h
+ * analysislib.h
  *
  *  Created on: 3 Apr 2012
  *      Author: tamer
@@ -72,7 +72,7 @@ void copy(double *arr1, double *arr2, int len) {
 		arr2[i] = arr1[i];
 }
 
-void print_table(double *arr, int len, double mean, double min, double max,
+void table(double *arr, int len, double mean, double min, double max,
 		double std) {
 
 	int i;
@@ -90,32 +90,38 @@ void print_table(double *arr, int len, double mean, double min, double max,
 	printf("Standard Deviation\t%lf\n", std);
 }
 
-void histogram(double *arr, int len, int max, int min) {
+void histogram(double *arr, int len, double max, double min) {
 
 	puts("Histogram");
 
-	int freq[10];
+	// Should not be able to modify this ever.
+	int size = 10;
+
+	int freq[size];
 
 	// Zero freq array
 	int i;
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < size; i++) {
 		freq[i] = 0;
 	}
 
-	double width = (max - min) / 10;
+	double width = (max - min) / size;
 	for (i = 0; i < len; i++) {
-		int position = (int) ((arr[i] - min) / width);
-		printf("arr[%d]=%d\n", i, arr[i]);
-		printf("min=%d\n", min);
-		printf("width=%d\n", width);
-		printf("position=%d\n", position);
-
+		int position = (int) floor(((arr[i] - min) / width));
+		if (DEBUG) {
+			printf("arr[%d]=%lf\n", i, arr[i]);
+			printf("min=%lf\n", min);
+			printf("width=%lf\n", width);
+			printf("position=%d\n", position);
+			printf("floor(((arr[i] - min) / width))=%d\n",
+					(int) floor(((arr[i] - min) / width)));
+		}
 		freq[position]++;
 	}
 
 	// Drawing the histogram using ASCII art
 
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < size; i++) {
 		int j;
 		printf("%d: ", i + 1);
 		for (j = 0; j < freq[i]; j++) {
