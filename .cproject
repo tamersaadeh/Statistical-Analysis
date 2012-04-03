@@ -16,9 +16,9 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.2004286283" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug" prebuildStep="-lm">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.2004286283" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug" prebuildStep="">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2004286283." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1080222166" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1080222166" name="Cross GCC" resourceTypeBasedDiscovery="true" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1386804577" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder buildPath="${workspace_loc:/Statistical Analysis/Debug}" id="cdt.managedbuild.builder.gnu.cross.1466748228" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.196595055" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
@@ -31,6 +31,9 @@
 								<option id="gnu.cpp.compiler.option.debugging.level.1847403940" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.415442028" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
+								<option id="gnu.c.link.option.libs.1987591775" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="m"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.149199631" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -46,6 +49,7 @@
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 			<storageModule moduleId="scannerConfiguration">
 				<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 				<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
@@ -259,7 +263,7 @@
 							<parser enabled="true"/>
 						</buildOutputProvider>
 						<scannerInfoProvider id="specsFile">
-							<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc -lm" useDefault="true"/>
+							<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
 							<parser enabled="true"/>
 						</scannerInfoProvider>
 					</profile>
@@ -339,6 +343,7 @@
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 			<storageModule moduleId="scannerConfiguration">
 				<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 				<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
@@ -552,7 +557,7 @@
 							<parser enabled="true"/>
 						</buildOutputProvider>
 						<scannerInfoProvider id="specsFile">
-							<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc -lm" useDefault="true"/>
+							<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
 							<parser enabled="true"/>
 						</scannerInfoProvider>
 					</profile>
